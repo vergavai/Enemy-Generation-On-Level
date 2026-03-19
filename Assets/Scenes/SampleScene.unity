@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnCooldown: 2
-  _enemyToSpawn: {fileID: 499570195356303910, guid: ee57101d97b92714f8ee7e784c7cd1a3, type: 3}
+  _enemyToSpawn: {fileID: 8961038814670181815, guid: ee57101d97b92714f8ee7e784c7cd1a3, type: 3}
   _spawnPoints: []
 --- !u!4 &1027993814
 Transform:
