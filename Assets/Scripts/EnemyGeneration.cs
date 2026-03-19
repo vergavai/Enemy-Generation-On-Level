@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class EnemyGeneration : MonoBehaviour
 {
     [SerializeField] private float _spawnCooldown;
-    [SerializeField] private GameObject _enemyToSpawn;
+    [SerializeField] private Enemy _enemyToSpawn;
     [SerializeField] private Transform[] _spawnPoints;
     
     private float _currentCooldown;
@@ -25,6 +22,7 @@ public class EnemyGeneration : MonoBehaviour
         if (_currentCooldown >= _spawnCooldown)
         {
             SpawnEnemy();
+            _currentCooldown = 0;
         }
     }
 
@@ -47,8 +45,8 @@ public class EnemyGeneration : MonoBehaviour
         Transform spawnPoint = _spawnPoints[randomSpawnPoint];
         Spawner spawner = _spawners[randomSpawnPoint];
         
-        Enemy enemy = Instantiate(_enemyToSpawn, spawnPoint.position, Quaternion.identity).GetComponent<Enemy>();
+        Enemy enemy = Instantiate(_enemyToSpawn, spawnPoint.position, Quaternion.identity);
+        
         enemy.Init(spawner.EnemyDirection);
-        _currentCooldown = 0;
     }
 }

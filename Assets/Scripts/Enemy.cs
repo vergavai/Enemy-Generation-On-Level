@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidBody.velocity = _moveDirection * _speed;
+        _rigidBody.velocity = new Vector3(_speed * _moveDirection.x, _rigidBody.velocity.y, _speed * _moveDirection.z);
     }
 
     public void Init(Vector3 direction)
