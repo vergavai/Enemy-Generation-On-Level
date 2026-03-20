@@ -1,13 +1,12 @@
-using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _speed;
     
     private Rigidbody _rigidBody;
     private Vector3 _moveDirection;
-    
 
     private void Awake()
     {
